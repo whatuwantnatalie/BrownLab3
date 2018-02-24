@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/gridjoin_0.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[40.5930752508,-74.0990627258],[40.8916011092,-73.6785404243]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
+        var bounds_group = new L.featureGroup([]);
+        var basemap0 = L.tileLayer('http://{s}.www.toolserver.org/tiles/bw-mapnik/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+            maxZoom: 28
+        });
+        basemap0.addTo(map);
+        function setBounds() {
+        }
+        function pop_gridjoin_0(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['left'] !== null ? Autolinker.link(String(feature.properties['left'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['bottom'] !== null ? Autolinker.link(String(feature.properties['bottom'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['right'] !== null ? Autolinker.link(String(feature.properties['right'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['top'] !== null ? Autolinker.link(String(feature.properties['top'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['GridID'] !== null ? Autolinker.link(String(feature.properties['GridID'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['GRoupSTats'] !== null ? Autolinker.link(String(feature.properties['GRoupSTats'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['GRoupSTa_1'] !== null ? Autolinker.link(String(feature.properties['GRoupSTa_1'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['orig_ogc_fid'] !== null ? Autolinker.link(String(feature.properties['orig_ogc_fid'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_gridjoin_0_0(feature) {
+            if (feature.properties['GRoupSTa_1'] >= 0.000000 && feature.properties['GRoupSTa_1'] <= 0.000000 ) {
+                return {
+                pane: 'pane_gridjoin_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.74)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(237,248,251,0.74)',
+            }
+            }
+            if (feature.properties['GRoupSTa_1'] >= 0.000000 && feature.properties['GRoupSTa_1'] <= 0.081081 ) {
+                return {
+                pane: 'pane_gridjoin_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.74)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(179,205,227,0.74)',
+            }
+            }
+            if (feature.properties['GRoupSTa_1'] >= 0.081081 && feature.properties['GRoupSTa_1'] <= 0.135027 ) {
+                return {
+                pane: 'pane_gridjoin_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.74)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(140,150,198,0.74)',
+            }
+            }
+            if (feature.properties['GRoupSTa_1'] >= 0.135027 && feature.properties['GRoupSTa_1'] <= 0.182576 ) {
+                return {
+                pane: 'pane_gridjoin_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.74)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(136,86,167,0.74)',
+            }
+            }
+            if (feature.properties['GRoupSTa_1'] >= 0.182576 && feature.properties['GRoupSTa_1'] <= 0.232885 ) {
+                return {
+                pane: 'pane_gridjoin_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.74)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(129,15,124,0.74)',
+            }
+            }
+        }
+        map.createPane('pane_gridjoin_0');
+        map.getPane('pane_gridjoin_0').style.zIndex = 400;
+        map.getPane('pane_gridjoin_0').style['mix-blend-mode'] = 'normal';
+        var layer_gridjoin_0 = new L.geoJson(json_gridjoin_0, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_gridjoin_0',
+            onEachFeature: pop_gridjoin_0,
+            style: style_gridjoin_0_0,
+        });
+        bounds_group.addLayer(layer_gridjoin_0);
+        map.addLayer(layer_gridjoin_0);
+        setBounds();
+        </script>
+    </body>
+</html>
